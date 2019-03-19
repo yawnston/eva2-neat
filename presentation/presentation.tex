@@ -65,25 +65,35 @@
     \end{columns}
 \end{frame}
 \begin{frame}{Historical Markings and Crossover}
-    \begin{columns}
-        \begin{column}{0.7\textwidth}
-            \begin{itemize}
-                \item innovation number
-                      \begin{itemize}
-                          \item new node via mutation \textrightarrow global innovation number++
-                          \item used to line-up genomes during crossover
-                      \end{itemize}
-                \item crossover
-                \begin{itemize}
-                    \item 
-                \end{itemize}
-                
-            \end{itemize}
-        \end{column}
-        \begin{column}{0.3\textwidth}
-           
-        \end{column}
-    \end{columns}
+    \begin{itemize}
+        \item innovation number
+              \begin{itemize}
+                  \item new gene via mutation \textrightarrow\ global innovation number++
+                  \item used to line-up genomes during crossover
+              \end{itemize}
+        \item crossover
+              \begin{itemize}
+                  \item matching genes randomly
+                  \item all disjoint and excess genes
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+\begin{frame}{Crossover}
+    \begin{figure}[c]
+        \includegraphics[scale=0.2]{img/crossover.png}
+    \end{figure}    
+\end{frame}
+\begin{frame}{Speciation}
+    \begin{itemize}
+        \item population is divided into species based on compatibility history \begin{equation*}
+            \delta = \frac{c_1E}{N}+\frac{c_2D}{N}+c_3 \overline{W}
+        \end{equation*} and compatibility threshold $\delta_t$
+        \item each population is assigned number of offsprings based on sum of its \emph{adjusted} fitnesses
+        \begin{equation*}
+            f_i' =\frac{f_i}{\sum_{j=1}^n sh(\delta(i,j))}
+        \end{equation*}
+        \item novel topologies are protected from extinction
+    \end{itemize}    
 \end{frame}
 \section{HyperNEAT}
 \begin{frame}{HyperNEAT}
@@ -91,7 +101,7 @@
         \begin{column}{0.5\textwidth}
             some text here some text here some text here some text here some text here
         \end{column}
-        \begin{column}{0.5\textwidth}  %%<--- here
+        \begin{column}{0.5\textwidth}
             some text here some
         \end{column}
     \end{columns}
